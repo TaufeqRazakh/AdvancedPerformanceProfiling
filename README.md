@@ -1,6 +1,11 @@
 # Advanced Performance Profiling
 CSCI 653: High Performance Computing and Simulations (Fall 2022)
 
+## Resource
+This section of the homework requires to make an Intel DevCloud account which can be made by signing up / registering fromthe Intel DevCloud OneApi [page](https://software.intel.com/devcloud/oneapi). If you previously made a DevCloud account, the above link can be used to revive an expired account account.
+
+For hekp with logging into the nodes please refer to the documentation under OneApi for DevCloud  (https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/)
+
 ## Pre-requisite: Installing the profiler and analysis GUI
 + Download & install the latest version of the Intel oneAPI Vtune Profiler GUI from [here](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler-download.html).
 
