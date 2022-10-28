@@ -4,7 +4,7 @@ CSCI 653: High Performance Computing and Simulations (Fall 2022)
 ## Resources
 Profiling and analysis for homework 6 requires an Intel DevCloud account. To set up an account with DevCloud  [use](https://software.intel.com/devcloud/oneapi) this link to sign up or register. Even if you previously made a DevCloud account, the above link can be used to revive an expired account.
 
-For help with logging into the nodes please refer to the documentation under OneApi for DevCloud  (https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/)
+For help with logging into the nodes please refer to the [documentation](https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/) under OneApi for DevCloud.
 
 ## Pre-requisite: Installing the profiler and analysis GUI
 + Download & install the latest version of the Intel oneAPI Vtune Profiler GUI from [here](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler-download.html).
@@ -18,8 +18,10 @@ Upon installation, launch the GUI. Depending on your OS, the default installatio
 
 ## Performance Profiling FMM Implementation
 
-You are already familar with the  a fast algorithm for particle simulations, [Journal of Computational Physics 73,  325–
-348 (1987)] introduced in assignment 2. VTune is capable of generatng reports for sereval analysis on the application target.
+By now you are well familar with "a fast algorithm for particle simulations" [Journal of Computational Physics 73,  325–
+348 (1987)] that was introduced in assignment 2. 
+
+Bear in mind that VTune is capable of generating several analysis reports for a target application.
 
 They are
 + performance-snapshot
@@ -29,16 +31,20 @@ They are
 + micro-architecture exploration
 + memory-access
 + hpc-performance
-+ io
++ i/o
 + gpu-offload
 + gpu-hotpost
 + fpga-interactoin
 + system-overview
 + platform-profiler
 
-We will carry out a hotspot analysis and try to understand our program by looking at the profiler report that's generated.
+For this part, we will carry out a hotspot analysis to identify the critical aspects of our program from the profile report which we will learn to generate.
 
-Request a compute node with the command below
+Clone this reposotory to your devcloud account
+```
+git clone https://github.com/TaufeqRazakh/AdvancedPerformanceProfiling.git
+`
+Request a compute node
 ```
 qsub -I
 ```
