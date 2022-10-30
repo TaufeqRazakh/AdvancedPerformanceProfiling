@@ -57,7 +57,7 @@ Now run the hotspot analysis
 ```
 vtune --collect hotspots --result-dir rFMMHotspots ./fmm2d
 ```
-When the proler finishes collection you should see a message which lists the hotpots to the command line
+When the profiler finishes the collection step you should see a message which lists the hotpots to the command line
 ```
 Top Hotspots
 Function    Module  CPU Time  % of CPU Time(%)
@@ -75,5 +75,5 @@ get -r rFMMHotspots
 
 Once you have completed importing the results, click on the three lines displayed on the left bar of the VTune window and select open>Result>\<*vtune report>.
 
-View the flame graph to view the call stack for the main function.
+Let's view the flame graph to view the call stack for the main function.
 ![main call stack](img/fmm_flame_graph.png)
