@@ -96,6 +96,6 @@ Open the Advisor GUI and select open project.
 Then select the `*.advixeproj` from the imported result directory. 
 
 You should be able to see the loops in the fmm program sitting on the roofline plots uping completion
-![roofline plot](img/fmm_roofline)
+![roofline plot](img/fmm_roofline.png)
 > Do you see any opportunity here?
-![memory bound](img/fmm_loop_memory_bound)
+![memory bound](img/fmm_loop_memory_bound.png)
