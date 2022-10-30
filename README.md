@@ -16,7 +16,7 @@ Upon installation, launch the GUI. Depending on your OS, the default installatio
 - Linux OS: /opt/intel/oneapi/
 - mac OS: /opt/intel/oneapi/
 
-## Performance Profiling FMM Implementation
+## Profiling FMM with VTune
 
 By now you are well familar with "a fast algorithm for particle simulations" [Journal of Computational Physics 73,  325–
 348 (1987)] that was introduced in assignment 2. 
