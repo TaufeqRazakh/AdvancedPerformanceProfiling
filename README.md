@@ -62,8 +62,9 @@ When the profiler finishes the collection step you should see a message which li
 Top Hotspots
 Function    Module  CPU Time  % of CPU Time(%)
 ----------  ------  --------  ----------------
-cmul        fmm2d     0.010s             50.0%
-all_direct  fmm2d     0.010s             50.0%
+all_direct  fmm2d     0.020s             50.5%
+fact        fmm2d     0.012s             29.4%
+cmul        fmm2d     0.008s             20.1%
 ```
 A detailed report is also generated whose name was specied when we entered  our vtune collection command as `rFMMHotspots`. We can now import this generated file  to our local computer and inspect the result file (*vtune) with the VTune proiler GUI.
 A simple way to import this would be through sftp
@@ -71,9 +72,30 @@ A simple way to import this would be through sftp
 sftp devcloud
 cd AdvancedPerformanceProfiling/fmm_profiling
 get -r rFMMHotspots
+bye
 ```
 
 Once you have completed importing the results, click on the three lines displayed on the left bar of the VTune window and select open>Result>\<*vtune report>.
 
 Let's view the flame graph to view the call stack for the main function.
 ![main call stack](img/fmm_flame_graph.png)
+
+## Identifying paralelizing opportunities in FMM with Advisor
+Identifying parallelizing opportunities in loops is best left to Advisor. Run an quick advisor collection with the following command.
+```
+advisor advisor --collect=roofline --project-dir=eFMMRoofline -- ./fmm2d
+```
+Import the results to your local machine with the commands 
+```
+sftp devcloud
+cd AdvancedPerformanceProfiling/fmm_profiling
+get -r eFMMRoofline
+bye
+```
+Open the Advisor GUI and select open project.
+Then select the `*.advixeproj` from the imported result directory. 
+
+You should be able to see the loops in the fmm program sitting on the roofline plots uping completion
+![roofline plot](img/fmm_roofline)
+> Do you see any opportunity here?
+![memory bound](img/fmm_loop_memory_bound)
