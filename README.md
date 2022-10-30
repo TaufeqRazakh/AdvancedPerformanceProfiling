@@ -81,21 +81,20 @@ Let's view the flame graph to view the call stack for the main function.
 ![main call stack](img/fmm_flame_graph.png)
 
 ## Identifying paralelizing opportunities in FMM with Advisor
-Identifying parallelizing opportunities in loops is best left to Advisor. Run an quick advisor collection with the following command.
+Identifying parallelizing opportunities in loops is a task best suited to Advisor tool. Run an quick collection with the following command.
 ```
 advisor advisor --collect=roofline --project-dir=eFMMRoofline -- ./fmm2d
 ```
-Import the results to your local machine with the commands 
+Import the results to your local machine with these commands: 
 ```
 sftp devcloud
 cd AdvancedPerformanceProfiling/fmm_profiling
 get -r eFMMRoofline
 bye
 ```
-Open the Advisor GUI and select open project.
-Then select the `*.advixeproj` from the imported result directory. 
+Open the Advisor GUI and select open projec>`*.advixeproj` from the imported result directory. 
 
-You should be able to see the loops in the fmm program sitting on the roofline plots uping completion
+You should be able to see the loops in the fmm program on the roofline plots upon completion.
 ![roofline plot](img/fmm_roofline.png)
-> Do you see any opportunity here?
+> Do you see any possibilities for parallelization here?
 ![memory bound](img/fmm_loop_memory_bound.png)
